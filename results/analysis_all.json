@@ -1,0 +1,317 @@
+{
+ "qwen2.5:3b": {
+  "A0": {
+   "n": 89,
+   "success": 9,
+   "wilson95": [
+    0.054,
+    0.181
+   ],
+   "malformed_text": 0,
+   "episodes_with_malformed": 0,
+   "invalid_calls": 0,
+   "rejected": 0,
+   "env_errors": 289,
+   "harness_errors": 1,
+   "stop_reasons": {
+    "max_steps": 54,
+    "user_stop": 29,
+    "transfer": 5,
+    "null": 1
+   },
+   "fail_classes": {
+    "E: harness error": 1,
+    "M1: write attempted, rejected by environment": 28,
+    "M2: required write never attempted": 44,
+    "O: required information not given": 1,
+    "W1: wrong arguments in a write": 5,
+    "W2: unrequested write": 1
+   },
+   "gate_writes_per_episode": 1.44,
+   "gate_wrong_writes": 127,
+   "gate_total_writes": 128,
+   "gate_wrong_rejected_by_shop": 120,
+   "gate_wrong_executed": 7,
+   "episodes_with_wrong_executed_write": 6,
+   "env_error_types": {
+    "not found": 262,
+    "state/policy": 10,
+    "other": 17
+   },
+   "transfers": 5,
+   "failed_with_wrong_write": 33,
+   "failed_without_wrong_write": 47,
+   "mean_llm_calls": 23.4,
+   "mean_gen_tokens": 3014,
+   "mean_prompt_tokens": 141062,
+   "mean_seconds": 190.7
+  },
+  "A1": {
+   "n": 89,
+   "success": 8,
+   "wilson95": [
+    0.046,
+    0.167
+   ],
+   "malformed_text": 0,
+   "episodes_with_malformed": 0,
+   "invalid_calls": 15,
+   "rejected": 1,
+   "env_errors": 316,
+   "harness_errors": 0,
+   "stop_reasons": {
+    "user_stop": 31,
+    "max_steps": 54,
+    "transfer": 4
+   },
+   "fail_classes": {
+    "M1: write attempted, rejected by environment": 33,
+    "M2: required write never attempted": 39,
+    "O: required information not given": 3,
+    "W1: wrong arguments in a write": 4,
+    "W2: unrequested write": 2
+   },
+   "gate_writes_per_episode": 1.4,
+   "gate_wrong_writes": 123,
+   "gate_total_writes": 125,
+   "gate_wrong_rejected_by_shop": 117,
+   "gate_wrong_executed": 6,
+   "episodes_with_wrong_executed_write": 6,
+   "env_error_types": {
+    "not found": 310,
+    "state/policy": 6
+   },
+   "transfers": 4,
+   "failed_with_wrong_write": 39,
+   "failed_without_wrong_write": 42,
+   "mean_llm_calls": 23.9,
+   "mean_gen_tokens": 2250,
+   "mean_prompt_tokens": 133990,
+   "mean_seconds": 168.1
+  },
+  "A2": {
+   "n": 88,
+   "success": 8,
+   "wilson95": [
+    0.047,
+    0.169
+   ],
+   "malformed_text": 0,
+   "episodes_with_malformed": 0,
+   "invalid_calls": 0,
+   "rejected": 0,
+   "env_errors": 347,
+   "harness_errors": 0,
+   "stop_reasons": {
+    "user_stop": 33,
+    "transfer": 39,
+    "max_steps": 16
+   },
+   "fail_classes": {
+    "M1: write attempted, rejected by environment": 41,
+    "M2: required write never attempted": 22,
+    "O: required information not given": 4,
+    "W1: wrong arguments in a write": 10,
+    "W2: unrequested write": 3
+   },
+   "gate_writes_per_episode": 1.68,
+   "gate_wrong_writes": 141,
+   "gate_total_writes": 148,
+   "gate_wrong_rejected_by_shop": 120,
+   "gate_wrong_executed": 21,
+   "episodes_with_wrong_executed_write": 13,
+   "env_error_types": {
+    "state/policy": 40,
+    "not found": 304,
+    "other": 3
+   },
+   "transfers": 39,
+   "failed_with_wrong_write": 55,
+   "failed_without_wrong_write": 25,
+   "mean_llm_calls": 17.1,
+   "mean_gen_tokens": 965,
+   "mean_prompt_tokens": 86468,
+   "mean_seconds": 55.8
+  },
+  "A0_vs_A1": {
+   "n_pairs": 89,
+   "only_A1": 1,
+   "only_A0": 2,
+   "mcnemar_exact_p": 1.0
+  },
+  "A0_vs_A2": {
+   "n_pairs": 88,
+   "only_A2": 0,
+   "only_A0": 1,
+   "mcnemar_exact_p": 1.0
+  },
+  "A1_vs_A2": {
+   "n_pairs": 88,
+   "only_A2": 1,
+   "only_A1": 1,
+   "mcnemar_exact_p": 1.0
+  },
+  "noise_floor_A0_A1": {
+   "tasks_where_A1_never_fired": 81,
+   "same_reward": 79,
+   "same_action_sequence": 0
+  }
+ },
+ "qwen2.5:7b": {
+  "A0": {
+   "n": 115,
+   "success": 17,
+   "wilson95": [
+    0.094,
+    0.224
+   ],
+   "malformed_text": 0,
+   "episodes_with_malformed": 0,
+   "invalid_calls": 0,
+   "rejected": 0,
+   "env_errors": 514,
+   "harness_errors": 0,
+   "stop_reasons": {
+    "user_stop": 60,
+    "max_steps": 49,
+    "transfer": 6
+   },
+   "fail_classes": {
+    "M1: write attempted, rejected by environment": 29,
+    "M2: required write never attempted": 28,
+    "O: required information not given": 2,
+    "W1: wrong arguments in a write": 28,
+    "W2: unrequested write": 11
+   },
+   "gate_writes_per_episode": 2.33,
+   "gate_wrong_writes": 249,
+   "gate_total_writes": 268,
+   "gate_wrong_rejected_by_shop": 194,
+   "gate_wrong_executed": 55,
+   "episodes_with_wrong_executed_write": 39,
+   "env_error_types": {
+    "not found": 416,
+    "other": 31,
+    "state/policy": 67
+   },
+   "transfers": 6,
+   "failed_with_wrong_write": 68,
+   "failed_without_wrong_write": 30,
+   "mean_llm_calls": 22.8,
+   "mean_gen_tokens": 3146,
+   "mean_prompt_tokens": 146401,
+   "mean_seconds": 265.3
+  },
+  "A1": {
+   "n": 115,
+   "success": 12,
+   "wilson95": [
+    0.061,
+    0.174
+   ],
+   "malformed_text": 0,
+   "episodes_with_malformed": 0,
+   "invalid_calls": 21,
+   "rejected": 2,
+   "env_errors": 497,
+   "harness_errors": 0,
+   "stop_reasons": {
+    "user_stop": 46,
+    "max_steps": 53,
+    "transfer": 16
+   },
+   "fail_classes": {
+    "M1: write attempted, rejected by environment": 36,
+    "M2: required write never attempted": 32,
+    "O: required information not given": 5,
+    "W1: wrong arguments in a write": 25,
+    "W2: unrequested write": 5
+   },
+   "gate_writes_per_episode": 2.32,
+   "gate_wrong_writes": 250,
+   "gate_total_writes": 267,
+   "gate_wrong_rejected_by_shop": 209,
+   "gate_wrong_executed": 41,
+   "episodes_with_wrong_executed_write": 30,
+   "env_error_types": {
+    "not found": 423,
+    "state/policy": 53,
+    "other": 21
+   },
+   "transfers": 16,
+   "failed_with_wrong_write": 66,
+   "failed_without_wrong_write": 37,
+   "mean_llm_calls": 22.4,
+   "mean_gen_tokens": 2926,
+   "mean_prompt_tokens": 140401,
+   "mean_seconds": 243.4
+  },
+  "A2": {
+   "n": 115,
+   "success": 15,
+   "wilson95": [
+    0.081,
+    0.204
+   ],
+   "malformed_text": 0,
+   "episodes_with_malformed": 0,
+   "invalid_calls": 0,
+   "rejected": 0,
+   "env_errors": 823,
+   "harness_errors": 0,
+   "stop_reasons": {
+    "user_stop": 65,
+    "max_steps": 28,
+    "transfer": 22
+   },
+   "fail_classes": {
+    "M1: write attempted, rejected by environment": 48,
+    "M2: required write never attempted": 15,
+    "O: required information not given": 4,
+    "W1: wrong arguments in a write": 26,
+    "W2: unrequested write": 7
+   },
+   "gate_writes_per_episode": 2.59,
+   "gate_wrong_writes": 271,
+   "gate_total_writes": 298,
+   "gate_wrong_rejected_by_shop": 229,
+   "gate_wrong_executed": 42,
+   "episodes_with_wrong_executed_write": 33,
+   "env_error_types": {
+    "state/policy": 67,
+    "not found": 741,
+    "other": 15
+   },
+   "transfers": 22,
+   "failed_with_wrong_write": 82,
+   "failed_without_wrong_write": 18,
+   "mean_llm_calls": 20.0,
+   "mean_gen_tokens": 1127,
+   "mean_prompt_tokens": 109227,
+   "mean_seconds": 118.0
+  },
+  "A0_vs_A1": {
+   "n_pairs": 115,
+   "only_A1": 3,
+   "only_A0": 8,
+   "mcnemar_exact_p": 0.227
+  },
+  "A0_vs_A2": {
+   "n_pairs": 115,
+   "only_A2": 8,
+   "only_A0": 10,
+   "mcnemar_exact_p": 0.815
+  },
+  "A1_vs_A2": {
+   "n_pairs": 115,
+   "only_A2": 9,
+   "only_A1": 6,
+   "mcnemar_exact_p": 0.607
+  },
+  "noise_floor_A0_A1": {
+   "tasks_where_A1_never_fired": 108,
+   "same_reward": 97,
+   "same_action_sequence": 0
+  }
+ }
+}
