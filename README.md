@@ -1,8 +1,11 @@
 # Cheap-guardrails pilot: harness, frozen protocol and traces
 
-Code, frozen protocol and full traces of a pilot study of cheap guardrails for small
-local LLM agents (Abdelbassette Chenna, University of Batna 2, 2026). The harness is also
-the measured baseline of a final-year engineering project on reliable business agents.
+Code, frozen protocol, full traces and exploratory analyses of the pilot study reported in
+*Well-Formed but Wrong: Residual Failures of Small Local LLM Agents under Lightweight
+Guardrails* (Abdelbassette Chenna, University of Batna 2, 2026; see
+[Exploratory analyses](#exploratory-analyses)).
+The harness is also the measured baseline of a final-year engineering project on
+reliable business agents.
 
 ## Question
 
@@ -45,11 +48,18 @@ tau-bench user simulator before the full run).
 - No arm differs from another (exact McNemar p = 1.0). On the 37 tasks where the A1
   check never fired, A1 ran exactly A0's protocol, yet 6 outcomes changed for the 7B
   model: batched serving and the simulated customer are not deterministic at temperature 0.
-- No call was syntactically malformed. 81 to 99% of the shop's error messages are
-  "not found", i.e. identifiers absent from the database.
+- Every native tool call parsed. Under A0 and A1 the 7B model sometimes wrote a call as
+  JSON text inside its message (2 and 6 of the 40 episodes); such a call goes to the
+  customer and is never executed, and only A2 removes it. 81 to 99% of the shop's error
+  messages are "not found", i.e. identifiers absent from the database.
+- Seven of the 115 test tasks can be passed by an agent that changes nothing: their gold
+  actions leave the database unchanged (for tasks 12 and 106 of the frozen 40, because the
+  shop rejects the gold write) and they need no output. Both 3B successes, in every arm,
+  are tasks 12 and 106; on the 38 other frozen tasks the 3B model never succeeded and the
+  7B model solved 3 per arm, a different set each time.
 - The 7B model also ran the 75 other test tasks (12, 7 and 11 successes for A0, A1, A2);
-  the 3B run covered 48 to 49 of them before the GPU budget ran out (7, 6, 6). Five of the
-  75 tasks need no write and no output, so any passive agent passes them.
+  the 3B run covered 48 to 49 of them before the GPU budget ran out (7, 6, 6). Five of
+  these 75 tasks are among the seven above.
 
 Full numbers: `results/analysis_{primary_40,extension_75,all}.{json,txt}`.
 
@@ -79,6 +89,32 @@ python -I analyze.py results --set primary_40
 To rerun the campaign: `KAGGLE_USERNAME=<you> python -I build_notebook.py`, then
 `kaggle kernels push -p kernels/full` (GPU T4 x2, Internet on). Expect small differences
 between runs: the noise floor above is part of the result.
+
+## Exploratory analyses
+
+The scripts in `exploratory/` produce the additional analyses of the article. They
+were written after the full run, are not part of the frozen protocol, and the article
+reports them as exploratory. They read the traces in `results/` and replay the executed
+calls on the shop database, so run them from the repository root after `vendor_tau.py`.
+
+| Script | Output | What it computes |
+|--------|--------|------------------|
+| `exploratory/extra_analysis.py` | `exploratory/outputs/extra_analysis.{json,txt}` | replays every executed call on a fresh database; provenance of the identifiers behind "not found" errors; identifiers the simulated customer invented; per-episode funnel; repeated failing calls; overlap of solved tasks; success by number of required writes; passive tasks |
+| `exploratory/provenance_guard.py` | `exploratory/outputs/provenance_guard.{json,txt}` | offline estimate of what an identifier-provenance check would have blocked |
+| `exploratory/textual_calls.py` | `exploratory/outputs/textual_calls.{json,txt}` | calls written as JSON text inside agent messages, and turns with several native calls (only the first is executed) |
+| `exploratory/review_checks.py` | `exploratory/outputs/review_checks.txt` | agent and simulator time, tokens per turn, schema-invalid executed calls, noise floor and identical tool sequences on quiet tasks |
+| `exploratory/make_figures.py` | `exploratory/figures/` | the three result figures of the article (needs matplotlib) |
+
+```bash
+python -I exploratory/extra_analysis.py . exploratory/outputs/extra_analysis.json > exploratory/outputs/extra_analysis.txt
+python -I exploratory/provenance_guard.py . exploratory/outputs/provenance_guard.json > exploratory/outputs/provenance_guard.txt
+python -I exploratory/textual_calls.py . exploratory/outputs/textual_calls.json > exploratory/outputs/textual_calls.txt
+python -I exploratory/review_checks.py . > exploratory/outputs/review_checks.txt
+python -I exploratory/make_figures.py exploratory/outputs results exploratory/figures
+```
+
+Rerun on the published traces, the four analysis scripts reproduce the files in
+`exploratory/outputs/` exactly; the figure files differ only in their embedded metadata.
 
 ## Failure classes (one per failed episode, first rule that applies)
 

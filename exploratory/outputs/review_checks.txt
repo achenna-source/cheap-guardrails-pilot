@@ -1,0 +1,12 @@
+3b A0 n=40 agent_llm_s=95 user_s=133 episode_s=220 model_turns=982 gen_tokens_per_turn=153 executed_calls=207 schema_invalid_executed=5
+3b A1 n=40 agent_llm_s=55 user_s=129 episode_s=178 model_turns=932 gen_tokens_per_turn=97 executed_calls=231 schema_invalid_executed=0
+3b A2 n=40 agent_llm_s=24 user_s=37 episode_s=53 model_turns=662 gen_tokens_per_turn=55 executed_calls=432 schema_invalid_executed=0
+3b noise primary_40: quiet=39 changed=0 same_tool_sequence=4
+3b noise extension_75: quiet=42 changed=2 same_tool_sequence=0
+3b noise all: quiet=81 changed=2 same_tool_sequence=4
+7b A0 n=40 agent_llm_s=215 user_s=94 episode_s=299 model_turns=959 gen_tokens_per_turn=146 executed_calls=369 schema_invalid_executed=13
+7b A1 n=40 agent_llm_s=212 user_s=77 episode_s=281 model_turns=931 gen_tokens_per_turn=151 executed_calls=372 schema_invalid_executed=0
+7b A2 n=40 agent_llm_s=75 user_s=60 episode_s=127 model_turns=830 gen_tokens_per_turn=57 executed_calls=426 schema_invalid_executed=0
+7b noise primary_40: quiet=37 changed=6 same_tool_sequence=2
+7b noise extension_75: quiet=71 changed=5 same_tool_sequence=2
+7b noise all: quiet=108 changed=11 same_tool_sequence=4

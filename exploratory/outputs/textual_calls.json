@@ -1,0 +1,86 @@
+{
+ "3b|primary_40|A0": {
+  "messages": 775,
+  "turns_with_extra_native_calls": 15,
+  "dropped_native_calls": 23,
+  "episodes_with_text_calls": 0,
+  "episodes": 40
+ },
+ "3b|primary_40|A1": {
+  "messages": 698,
+  "episodes_with_text_calls": 0,
+  "episodes": 40,
+  "turns_with_extra_native_calls": 9,
+  "dropped_native_calls": 11
+ },
+ "3b|primary_40|A2": {
+  "messages": 230,
+  "episodes_with_text_calls": 0,
+  "episodes": 40
+ },
+ "3b|all|A0": {
+  "messages": 1597,
+  "turns_with_extra_native_calls": 25,
+  "dropped_native_calls": 36,
+  "episodes_with_text_calls": 0,
+  "episodes": 88
+ },
+ "3b|all|A1": {
+  "messages": 1574,
+  "episodes_with_text_calls": 0,
+  "episodes": 89,
+  "turns_with_extra_native_calls": 23,
+  "dropped_native_calls": 30
+ },
+ "3b|all|A2": {
+  "messages": 550,
+  "episodes_with_text_calls": 0,
+  "episodes": 88
+ },
+ "7b|primary_40|A0": {
+  "messages": 590,
+  "episodes_with_text_calls": 2,
+  "episodes": 40,
+  "turns_with_extra_native_calls": 14,
+  "dropped_native_calls": 18,
+  "messages_with_text_calls": 10,
+  "text_calls": 13
+ },
+ "7b|primary_40|A1": {
+  "messages": 555,
+  "episodes_with_text_calls": 6,
+  "episodes": 40,
+  "messages_with_text_calls": 34,
+  "text_calls": 47,
+  "turns_with_extra_native_calls": 9,
+  "dropped_native_calls": 15
+ },
+ "7b|primary_40|A2": {
+  "messages": 404,
+  "episodes_with_text_calls": 0,
+  "episodes": 40
+ },
+ "7b|all|A0": {
+  "messages": 1575,
+  "episodes_with_text_calls": 10,
+  "episodes": 115,
+  "turns_with_extra_native_calls": 28,
+  "dropped_native_calls": 39,
+  "messages_with_text_calls": 57,
+  "text_calls": 371
+ },
+ "7b|all|A1": {
+  "messages": 1538,
+  "episodes_with_text_calls": 11,
+  "episodes": 115,
+  "messages_with_text_calls": 76,
+  "text_calls": 145,
+  "turns_with_extra_native_calls": 27,
+  "dropped_native_calls": 58
+ },
+ "7b|all|A2": {
+  "messages": 1020,
+  "episodes_with_text_calls": 0,
+  "episodes": 115
+ }
+}
